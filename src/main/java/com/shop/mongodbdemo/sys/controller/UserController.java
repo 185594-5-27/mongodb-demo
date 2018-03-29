@@ -24,4 +24,12 @@ public class UserController {
         return result;
     }
 
+    @RequestMapping(value = "/findUserByUserName",method = RequestMethod.POST)
+    public Map<String,Object> findUserByUserName(String userName){
+        Map<String,Object> result = new HashMap<String,Object>();
+        User user = userDao.findUserByUserName(userName);
+        result.put("user",user);
+        return result;
+    }
+
 }
